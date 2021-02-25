@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Responsavels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cpf</th>
+      <th>Rg</th>
+      <th>Telefone</th>
+      <th>Idade</th>
+      <th>Sexo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @responsavels.each do |responsavel| %>
+      <tr>
+        <td><%= responsavel.nome %></td>
+        <td><%= responsavel.cpf %></td>
+        <td><%= responsavel.rg %></td>
+        <td><%= responsavel.telefone %></td>
+        <td><%= responsavel.idade %></td>
+        <td><%= responsavel.sexo %></td>
+        <td><%= link_to 'Show', responsavel %></td>
+        <td><%= link_to 'Edit', edit_responsavel_path(responsavel) %></td>
+        <td><%= link_to 'Destroy', responsavel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Responsavel', new_responsavel_path %>

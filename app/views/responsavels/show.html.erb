@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @responsavel.nome %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @responsavel.cpf %>
+</p>
+
+<p>
+  <strong>Rg:</strong>
+  <%= @responsavel.rg %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @responsavel.telefone %>
+</p>
+
+<p>
+  <strong>Idade:</strong>
+  <%= @responsavel.idade %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @responsavel.sexo %>
+</p>
+
+<%= link_to 'Edit', edit_responsavel_path(@responsavel) %> |
+<%= link_to 'Back', responsavels_path %>
