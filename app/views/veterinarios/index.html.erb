@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Veterinarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cpf</th>
+      <th>Crmv</th>
+      <th>Telefone</th>
+      <th>Especialidade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @veterinarios.each do |veterinario| %>
+      <tr>
+        <td><%= veterinario.nome %></td>
+        <td><%= veterinario.cpf %></td>
+        <td><%= veterinario.crmv %></td>
+        <td><%= veterinario.telefone %></td>
+        <td><%= veterinario.especialidade %></td>
+        <td><%= link_to 'Show', veterinario %></td>
+        <td><%= link_to 'Edit', edit_veterinario_path(veterinario) %></td>
+        <td><%= link_to 'Destroy', veterinario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Veterinario', new_veterinario_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @veterinario.nome %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @veterinario.cpf %>
+</p>
+
+<p>
+  <strong>Crmv:</strong>
+  <%= @veterinario.crmv %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @veterinario.telefone %>
+</p>
+
+<p>
+  <strong>Especialidade:</strong>
+  <%= @veterinario.especialidade %>
+</p>
+
+<%= link_to 'Edit', edit_veterinario_path(@veterinario) %> |
+<%= link_to 'Back', veterinarios_path %>

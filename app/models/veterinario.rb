@@ -1,0 +1,2 @@
+class Veterinario < ApplicationRecord
+end
