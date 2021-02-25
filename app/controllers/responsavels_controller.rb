@@ -64,6 +64,6 @@ class ResponsavelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def responsavel_params
-      params.require(:responsavel).permit(:nome, :cpf, :rg, :telefone, :idade, :sexo)
+      params.require(:responsavel).permit(:nome, :cpf, :telefone, :idade, :sexo)
     end
 end
