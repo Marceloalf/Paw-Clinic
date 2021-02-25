@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2021-02-24 23:32:49
+  sintomas: MyString
+  prescricao: MyString
+  created_at: 2021-02-24 23:32:49
+  deleted_at: 2021-02-24 23:32:49
+
+two:
+  data: 2021-02-24 23:32:49
+  sintomas: MyString
+  prescricao: MyString
+  created_at: 2021-02-24 23:32:49
+  deleted_at: 2021-02-24 23:32:49

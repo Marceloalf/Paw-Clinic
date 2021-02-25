@@ -1,0 +1,2 @@
+class Consultum < ApplicationRecord
+end

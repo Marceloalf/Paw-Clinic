@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @consultum.data %>
+</p>
+
+<p>
+  <strong>Sintomas:</strong>
+  <%= @consultum.sintomas %>
+</p>
+
+<p>
+  <strong>Prescricao:</strong>
+  <%= @consultum.prescricao %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @consultum.created_at %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @consultum.deleted_at %>
+</p>
+
+<%= link_to 'Edit', edit_consultum_path(@consultum) %> |
+<%= link_to 'Back', consulta_path %>
