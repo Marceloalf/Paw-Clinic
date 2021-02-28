@@ -7,6 +7,7 @@ class CreateAnimals < ActiveRecord::Migration[6.1]
       t.string :complicacoes
       t.integer :idade
       t.string :sexo
+      t.integer :responsavel_id
 
       t.timestamps
     end

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_023832) do
     t.string "complicacoes"
     t.integer "idade"
     t.string "sexo"
+    t.integer "responsavel_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

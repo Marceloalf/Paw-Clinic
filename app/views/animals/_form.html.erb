@@ -12,6 +12,15 @@
   <% end %>
 
   <div class="field">
+    <% if @animal.responsavel %>
+      <%= form.hidden_field 'responsavel_id' %>
+    <% else %>
+      <%= form.label :responsavel_id %> <br/>
+      <%= form.collection_select(:responsavel_id, Responsavel.order('nome'), :id, :nome, {:prompt => true}) %>
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= form.label :nome %>
     <%= form.text_field :nome %>
   </div>

@@ -12,15 +12,21 @@ class AnimalsController < ApplicationController
 
   # GET /animals/new
   def new
+    prepare_form
     @animal = Animal.new
   end
 
   # GET /animals/1/edit
   def edit
+    prepare_form
   end
 
   # POST /animals or /animals.json
   def create
+    if params[:responsavel]
+      @animal.responsavel = Responsavel.find(animal_params)
+    end
+
     @animal = Animal.new(animal_params)
 
     respond_to do |format|
@@ -57,6 +63,10 @@ class AnimalsController < ApplicationController
   end
 
   private
+    def prepare_form
+      @responsavels = Responsavel.order :nome
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_animal
       @animal = Animal.find(params[:id])
@@ -64,6 +74,6 @@ class AnimalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def animal_params
-      params.require(:animal).permit(:nome, :especie, :raca, :complicacoes, :idade, :sexo)
+      params.require(:animal).permit(:responsavel_id, :nome, :especie, :raca, :complicacoes, :idade, :sexo)
     end
 end
