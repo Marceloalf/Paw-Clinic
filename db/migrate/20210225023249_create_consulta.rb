@@ -6,6 +6,9 @@ class CreateConsulta < ActiveRecord::Migration[6.1]
       t.string :prescricao
       t.datetime :deleted_at
 
+      t.integer :veterinario_id
+      t.integer :animal_id
+
       t.timestamps
     end
   end

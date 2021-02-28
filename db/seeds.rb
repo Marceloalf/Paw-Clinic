@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do |i|
+  Responsavel.create!(
+    nome: "Nome #{i}",
+    cpf: "#{i}",
+    telefone: "32222121",
+    idade: "32222121",
+    sexo: "Não identificado"
+  )
+end

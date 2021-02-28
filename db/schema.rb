@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2021_02_25_023832) do
     t.string "sintomas"
     t.string "prescricao"
     t.datetime "deleted_at"
+    t.integer "veterinario_id"
+    t.integer "animal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

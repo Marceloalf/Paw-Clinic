@@ -12,6 +12,24 @@
   <% end %>
 
   <div class="field">
+    <% if @consultum.veterinario %>
+      <%= form.hidden_field 'veterinario_id' %>
+    <% else %>
+      <%= form.label :veterinario_id %> <br/>
+      <%= form.collection_select(:veterinario_id, Veterinario.order('nome'), :id, :nome, {:prompt => true}) %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <% if @consultum.animal %>
+      <%= form.hidden_field 'animal_id' %>
+    <% else %>
+      <%= form.label :animal_id %> <br/>
+      <%= form.collection_select(:animal_id, Animal.order('nome'), :id, :nome, {:prompt => true}) %>
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= form.label :data %>
     <%= form.datetime_select :data %>
   </div>
@@ -24,16 +42,6 @@
   <div class="field">
     <%= form.label :prescricao %>
     <%= form.text_field :prescricao %>
-  </div>
-
-  <div class="field">
-    <%= form.label :created_at %>
-    <%= form.datetime_select :created_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :deleted_at %>
-    <%= form.datetime_select :deleted_at %>
   </div>
 
   <div class="actions">

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Nova', new_consultum_path %>
 
-<h1>Consulta</h1>
+<h1>Ativas</h1>
 
 <table>
   <thead>
@@ -30,6 +31,30 @@
   </tbody>
 </table>
 
-<br>
+<h1>Não Ativas</h1>
 
-<%= link_to 'New Consultum', new_consultum_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Sintomas</th>
+      <th>Prescricao</th>
+      <th>Created at</th>
+      <th>Deleted at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deletados.each do |consultum| %>
+      <tr>
+        <td><%= consultum.data %></td>
+        <td><%= consultum.sintomas %></td>
+        <td><%= consultum.prescricao %></td>
+        <td><%= consultum.created_at %></td>
+        <td><%= consultum.deleted_at %></td>
+        <td><%= link_to 'Show', consultum %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
