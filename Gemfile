@@ -54,3 +54,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'sqlite3', '~> 1.3', '>= 1.3.11'
+
+gem "twitter-bootstrap-rails"
+
+gem 'jquery-rails'
