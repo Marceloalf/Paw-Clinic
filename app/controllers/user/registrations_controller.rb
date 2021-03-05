@@ -16,10 +16,9 @@ class User::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    x = 1
-    super
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
