@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    confirmations: 'users/confirmations',
+    sessions: 'user/sessions',
+    registrations: 'user/registrations'
+  }
   resources :responsavels
   resources :consulta
   resources :animals
-  resources :veterinarios
+  resources :veterinario
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
