@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_062257) do
+ActiveRecord::Schema.define(version: 2021_03_11_145927) do
 
   create_table "animals", force: :cascade do |t|
     t.string "nome"
     t.string "especie"
     t.string "raca"
     t.string "complicacoes"
-    t.integer "idade"
     t.string "sexo"
     t.integer "responsavel_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "idade"
   end
 
   create_table "consulta", force: :cascade do |t|
@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2021_03_11_062257) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.boolean "is_admin", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "tipo_usuario", null: false
@@ -62,7 +61,6 @@ ActiveRecord::Schema.define(version: 2021_03_11_062257) do
 
   create_table "veterinarios", force: :cascade do |t|
     t.string "nome"
-    t.integer "idade"
     t.string "sexo"
     t.string "cpf"
     t.string "crmv"
@@ -70,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_062257) do
     t.string "especialidade"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "data_nascimento"
   end
 
 end

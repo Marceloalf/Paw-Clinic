@@ -13,8 +13,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       ## Rememberable
       t.datetime :remember_created_at
 
-      t.boolean :is_admin, null: false, default: false
-
       t.timestamps null: false
 
       t.string :tipo_usario, null: false

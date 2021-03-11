@@ -1,0 +1,54 @@
+<h1 class="mb-5">Página do admin</h1>
+
+<h2>Responsáveis</h2>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">nome</th>
+    <th scope="col">cpf</th>
+    <th scope="col">tem usuário</th>
+    <th scope="col">email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% Responsavel.all.each do |responsavel| %>
+    <tr scope="row">
+      <td><%= responsavel.id %></td>
+      <td><%= responsavel.nome %></td>
+      <td><%= responsavel.cpf %></td>
+      <td>
+        <% if responsavel.user.nil? %>Não<% else %>Sim<% end %>
+      </td>
+      <td><% if responsavel.user.nil? %> ---- <% else %><%= responsavel.user.email %><% end %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<h2 class="mt-5">Veterinários</h2>
+
+<%= link_to 'Criar novo', new_veterinario_path , class: "btn btn-primary"%>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">nome</th>
+    <th scope="col">especialidade</th>
+    <th scope="col">email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% Veterinario.all.each do |veterinario| %>
+    <tr scope="row">
+      <td><%= veterinario.id %></td>
+      <td><%= veterinario.nome %></td>
+      <td><%= veterinario.especialidade %></td>
+      <td><%= veterinario.user.email %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
