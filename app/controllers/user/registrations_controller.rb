@@ -6,7 +6,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
     params = devise_parameter_sanitizer.sanitize(:sign_up)
-    params['tipo_usario'] = :responsavel
+    params['tipo_usuario'] = :responsavel
     params
   end
 
