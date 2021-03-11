@@ -7,9 +7,6 @@ class HomeController < ApplicationController
   end
 
   def user
-    current_user.tipo_usuario = :responsavel
-    current_user.save
-
     if current_user.tipo_usuario == :responsavel
       Responsavel.find_by_user_id current_user.id
     end
