@@ -2,7 +2,6 @@ class HomeController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user = user
     render current_user.tipo_usuario
   end
 

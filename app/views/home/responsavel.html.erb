@@ -1,6 +1,5 @@
 <h1>
-  Olá
-  <%= @user.nome %>
+  Olá <%= current_user.responsavel.nome %>
 </h1>
 
 <a href="users/sign_out/" data-method="DELETE">
