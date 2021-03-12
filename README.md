@@ -21,4 +21,13 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+
+## Como criar um admin
+
+abrir o `rails console` e digitar o seguinte comando alterando os dados necessários.
+
+**Obs**:  não alterar o valor `tipo_usuario`
+
+```ruby
+User.create!({:email => "emsssesdsail@admin.com", :password => "123456", :tipo_usuario => :admin })
+```
