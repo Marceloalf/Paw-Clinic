@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'Nova', new_consultum_path %>
+
+
+<div class="mt-5">
+  <%= link_to 'Consulta sem cadastro?', new_consultum_path %>
+</div>
+
+<div>
+  <%= link_to 'Já possui cadastro?', new_consultum_path %>
+</div>
 
 <h1>Ativas</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Data</th>
@@ -16,24 +24,46 @@
   </thead>
 
   <tbody>
-    <% @consulta.each do |consultum| %>
+    <% @consulta.each do |consulta| %>
       <tr>
-        <td><%= consultum.data %></td>
-        <td><%= consultum.sintomas %></td>
-        <td><%= consultum.prescricao %></td>
-        <td><%= consultum.created_at %></td>
-        <td><%= consultum.deleted_at %></td>
-        <td><%= link_to 'Show', consultum %></td>
-        <td><%= link_to 'Edit', edit_consultum_path(consultum) %></td>
-        <td><%= link_to 'Destroy', consultum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% render "as_list_without_link", consulta %>
+        <td><%= link_to 'Show', consulta %></td>
+        <td><%= link_to 'Edit', edit_consultum_path(consulta) %></td>
+        <td><%= link_to 'Destroy', consulta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<h1>Não Ativas</h1>
+<h1>
+  Finalizada
+</h1>
 
-<table>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Data</th>
+    <th>Sintomas</th>
+    <th>Prescricao</th>
+    <th>Created at</th>
+    <th>Deleted at</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @finalizados.each do |consulta| %>
+    <tr>
+      <% render "as_list_without_link", consulta %>
+      <td><%= link_to 'Show', consulta %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h1>Canceladas</h1>
+
+<table class="table">
   <thead>
     <tr>
       <th>Data</th>
@@ -46,14 +76,10 @@
   </thead>
 
   <tbody>
-    <% @deletados.each do |consultum| %>
+    <% @deletados.each do |consulta| %>
       <tr>
-        <td><%= consultum.data %></td>
-        <td><%= consultum.sintomas %></td>
-        <td><%= consultum.prescricao %></td>
-        <td><%= consultum.created_at %></td>
-        <td><%= consultum.deleted_at %></td>
-        <td><%= link_to 'Show', consultum %></td>
+        <% render "as_list_without_link", consulta %>
+        <td><%= link_to 'Show', consulta %></td>
       </tr>
     <% end %>
   </tbody>
