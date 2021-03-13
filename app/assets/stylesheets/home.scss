@@ -3,127 +3,129 @@ $bg-red: #DA2A39;
 $bg-blue: #0476D9;
 $bg-green: #03A65A;
 
-// cores
-.consulta {
-  background: $bg-red;
-}
-
-.veterinario {
-  background: $bg-blue;
-}
-
-.pet {
-  background: $bg-green;
-}
-
-.content {
-  background: #74cfc7;
-
-  &::before {
-    background: #a8e1dc7e;
+#home {
+  // cores
+  .consulta {
+    background: $bg-red;
   }
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", serif;
-}
+  .veterinario {
+    background: $bg-blue;
+  }
 
-.content {
-  height: 100vh;
-  width: 80vw;
-  margin: 0 auto;
-  position: relative;
-  padding: 10vh;
-  transform: skew(-8deg, 0deg);
+  .pet {
+    background: $bg-green;
+  }
 
-  &::before {
+  .content {
+    background: #74cfc7;
+
+    &::before {
+      background: #a8e1dc7e;
+    }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", serif;
+  }
+
+  .content {
     height: 100vh;
-    width: 90vw;
-    content: "";
+    width: 80vw;
     margin: 0 auto;
-    position: absolute;
-    top: 0;
-    left: -5vw;
-    right: 0;
-    bottom: 0;
-    z-index: -3;
-  }
+    position: relative;
+    padding: 10vh;
+    transform: skew(-8deg, 0deg);
 
-  header {
-    height: 10vh;
-    padding: 0 10px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 40px;
+    &::before {
+      height: 100vh;
+      width: 90vw;
+      content: "";
+      margin: 0 auto;
+      position: absolute;
+      top: 0;
+      left: -5vw;
+      right: 0;
+      bottom: 0;
+      z-index: -3;
+    }
 
-    .profile {
-      a {
-        font-size: 28px;
-        float: right;
-        color: $text-black;
+    header {
+      height: 10vh;
+      padding: 0 10px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 40px;
+
+      .profile {
+        a {
+          font-size: 28px;
+          float: right;
+          color: $text-black;
+        }
+      }
+
+      img {
+        margin-left: 23px;
+        background: white;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: black;
       }
     }
 
-    img {
-      margin-left: 23px;
-      background: white;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border-style: solid;
-      border-color: black;
-    }
-  }
-
-  main {
-    height: 100%;
-    transform: skew(8deg, 0deg);
-
-    .buttons {
+    main {
       height: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+      transform: skew(8deg, 0deg);
 
-      div {
-        p {
-          margin-top: 10px;
-          text-align: center;
-          font-size: 3rem;
-        }
+      .buttons {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
 
-        a {
-          width: 260px;
-          height: 200px;
-          display: inline-block;
-          padding: 20px;
+        div {
+          p {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 3rem;
+          }
 
-          border-radius: 32px;
-          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.17) !important;
-        }
+          a {
+            width: 260px;
+            height: 200px;
+            display: inline-block;
+            padding: 20px;
 
-        margin-right: 50px;
+            border-radius: 32px;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.17) !important;
+          }
 
-        svg {
-          width: 100%;
-          height: 100%;
+          margin-right: 50px;
 
-          path {
-            stroke: white;
+          svg {
+            width: 100%;
+            height: 100%;
+
+            path {
+              stroke: white;
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
           }
         }
 
-        &:last-child {
-          margin-right: 0;
-        }
       }
-
     }
   }
 }
