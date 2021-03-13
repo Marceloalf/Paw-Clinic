@@ -1,58 +1,23 @@
-<h1 class="mb-5">Página do admin</h1>
+<div class="content">
 
-<h2>Responsáveis</h2>
+  <main>
+    <header>
+      <div class="profile">
+        <p>Bem vindo, Usuário 1</p>
+        <a href="">Sign out</a>
+      </div>
+      <img
+        src="
+                    https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw
+                    "
+        alt="profile img">
 
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">id</th>
-    <th scope="col">nome</th>
-    <th scope="col">cpf</th>
-    <th scope="col">tem usuário</th>
-    <th scope="col">email</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% Responsavel.all.each do |responsavel| %>
-    <tr scope="row">
-      <td><%= responsavel.id %></td>
-      <td><%= responsavel.nome %></td>
-      <td><%= responsavel.cpf %></td>
-      <td>
-        <% if responsavel.user.nil? %>Não<% else %>Sim<% end %>
-      </td>
-      <td><% if responsavel.user.nil? %> ---- <% else %><%= responsavel.user.email %><% end %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+    </header>
 
-
-<h2 class="mt-5">Veterinários</h2>
-
-<%= link_to 'Criar novo', new_veterinario_path , class: "btn btn-primary"%>
-
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">id</th>
-    <th scope="col">nome</th>
-    <th scope="col">especialidade</th>
-    <th scope="col">email</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% Veterinario.all.each do |veterinario| %>
-    <tr scope="row">
-      <td><%= veterinario.id %></td>
-      <td><%= veterinario.nome %></td>
-      <td><%= veterinario.especialidade %></td>
-      <td><%= veterinario.user.email %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<a href="users/sign_out/" data-method="DELETE">
-  Sign out
-</a>
+    <div class="buttons">
+      <a href="" class="pet"></a>
+      <a href="" class="consulta"></a>
+      <a href="" class="veterinario"></a>
+    </div>
+  </main>
+</div>
