@@ -1,3 +1,17 @@
 // Place all the styles related to the Responsavels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "variaveis";
+
+#responsavel {
+  main {
+    width: 60vw;
+    margin: 0 0 0 auto;
+  }
+
+  h1 {
+    color: $text-green;
+    font-weight: 500;
+    margin-bottom: 1.2em;
+  }
+}

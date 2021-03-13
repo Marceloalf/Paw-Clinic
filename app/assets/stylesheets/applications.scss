@@ -1,0 +1,44 @@
+@import "variaveis";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", serif;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  .list-item {
+    width: 100%;
+    list-style-type: none;
+
+    .list-button {
+      width: 60%;
+      margin: .8em 0;
+
+      display: block;
+
+      font-size: 1.5rem;
+      line-height: 40px;
+      padding: 5px 30px;
+
+      border-radius: 7px;
+
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+
+      &:hover {
+        background: $bg-green;
+        color: white;
+      }
+
+      text-decoration: none;
+      color: $text-black
+    }
+  }
+}

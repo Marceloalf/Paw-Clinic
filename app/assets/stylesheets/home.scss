@@ -1,7 +1,4 @@
-$text-black: #222222;
-$bg-red: #DA2A39;
-$bg-blue: #0476D9;
-$bg-green: #03A65A;
+@import "variaveis";
 
 #home {
   // cores
@@ -23,13 +20,6 @@ $bg-green: #03A65A;
     &::before {
       background: #a8e1dc7e;
     }
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", serif;
   }
 
   .content {
