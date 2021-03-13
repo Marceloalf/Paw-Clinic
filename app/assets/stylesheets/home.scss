@@ -91,29 +91,38 @@ $bg-green: #03A65A;
       justify-content: center;
       align-items: center;
 
-      a {
-         width: 244px;
-         height: 200px;
-         margin-right: 50px;
-         border-radius: 32px;
+      div {
+        p {
+          margin-top: 10px;
+          text-align: center;
+          font-size: 3rem;
+        }
 
-         padding: 20px;
-         box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+        a {
+          width: 260px;
+          height: 200px;
+          display: inline-block;
+          padding: 20px;
 
-         svg {
-           width: 100%;
-           height: 100%;
-           g {
-             path {
-               stroke: white;
-             }
-           }
-         }
+          border-radius: 32px;
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.17) !important;
+        }
 
-         &:last-child {
-           margin-right: 0;
-         }
-       }
+        margin-right: 50px;
+
+        svg {
+          width: 100%;
+          height: 100%;
+
+          path {
+            stroke: white;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
 
     }
   }
