@@ -3,21 +3,23 @@
   <main>
     <header>
       <div class="profile">
-        <p>Bem vindo, Usuário 1</p>
-        <a href="">Sign out</a>
+        <p>Bem vindo, admin!</p>
+        <a href="">Sair</a>
       </div>
       <img
-        src="
-                    https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw
-                    "
-        alt="profile img">
-
+        src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
     </header>
 
     <div class="buttons">
-      <a href="" class="pet"></a>
-      <a href="" class="consulta"></a>
-      <a href="" class="veterinario"></a>
+      <a href="" class="pet">
+        <%= show_svg('pata.svg') %>
+      </a>
+      <a href="" class="consulta">
+        <%= show_svg('estetoscopio.svg') %>
+      </a>
+      <a href="" class="veterinario">
+        <%= show_svg('medico.svg') %>
+      </a>
     </div>
   </main>
 </div>
