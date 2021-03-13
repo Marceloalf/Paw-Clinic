@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2021_03_12_021917) do
     t.string "prescricao"
     t.datetime "deleted_at"
     t.integer "veterinario_id"
-    t.integer "animal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "finalizada", default: false, null: false
