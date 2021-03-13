@@ -11,7 +11,18 @@
     nome: "Nome #{i}",
     cpf: "#{i}",
     telefone: "32222121",
-    idade: "32222121",
-    sexo: "Não identificado"
+    data_nascimento: Date.today,
+    sexo: "Não identificado",
+    user: User.new(
+      email: "resposavel-#{i}@email.com",
+      password: "123456",
+      tipo_usuario: "resposavel"
+    )
   )
 end
+
+User.create!(
+  email: "admin@admin.com",
+  password: "123456",
+  tipo_usuario: "admin"
+)
