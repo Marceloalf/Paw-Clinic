@@ -1,5 +1,21 @@
-<h1>New Animal</h1>
+<div id="responsavel">
+  <div class="banner-content">
+    <%= show_svg("pata.svg") %>
+  </div>
 
-<%= render 'form', animal: @animal %>
+  <main>
+    <header>
+      <div class="profile">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= link_to 'Voltar', responsavels_path %>
+      </div>
+      <img src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
+    </header>
 
-<%= link_to 'Back', animals_path %>
+    <div>
+      <h1>Cadastro Animal</h1>
+      <%= render 'form', animal: @animal %>
+    </div>
+  </main>
+</div>
+
