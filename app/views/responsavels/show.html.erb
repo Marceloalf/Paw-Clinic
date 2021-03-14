@@ -48,7 +48,7 @@
       <div class="pets">
         <h3>
           Pets
-          <%= link_to new_animal_path, :class => "add-link" do %>
+          <%= link_to new_animal_path(@responsavel), :class => "add-link" do %>
             <i class="large material-icons">add_circle</i>
           <% end %>
         </h3>
@@ -57,7 +57,17 @@
         <% else %>
           <ul>
             <% @responsavel.animals.each do |animal| %>
-              <li><%= animal.nome %></li>
+              <li>
+                <%= link_to animal.nome, animal %>
+
+                <%= link_to edit_animal_path(animal), :class => "icons-link" do %>
+                  <i class="large material-icons">edit</i>
+                <% end %>
+
+                <%= link_to animal, method: :delete, remote: true, class: "icons-link" do %>
+                  <i class="large material-icons">delete</i>
+                <% end %>
+              </li>
             <% end %>
           </ul>
         <% end %>
