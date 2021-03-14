@@ -4,14 +4,18 @@
 @import "variaveis";
 
 #responsavel {
-  main {
-    width: 60vw;
-    margin: 0 0 0 auto;
-  }
-
   h1 {
     color: $text-green;
     font-weight: 500;
     margin-bottom: 1.2em;
   }
+
+  .banner-content {
+    background-color: #32ac5581;
+
+    &::before {
+      background-color: #32AC54;
+    }
+  }
+
 }
