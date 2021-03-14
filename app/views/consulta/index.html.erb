@@ -25,6 +25,15 @@
         <% @ativas.each do |consulta| %>
           <li class="list-item">
             <%= link_to consulta.data, consulta, :class => "list-button"%>
+
+            <%= link_to edit_consultum_path(consulta), :class => "icons-link" do %>
+              <i class="large material-icons">edit</i>
+            <% end %>
+
+            <%= link_to consulta, method: :delete, remote: true, class: "icons-link" do %>
+              <i class="large material-icons">cancel</i>
+            <% end %>
+
           </li>
         <% end %>
       </ul>
@@ -43,6 +52,9 @@
         <% @deletados.each do |consulta| %>
           <li class="list-item">
             <%= link_to consulta.data, consulta, :class => "list-button"%>
+            <%= link_to edit_consultum_path(consulta), :class => "icons-link" do %>
+              <i class="large material-icons">edit</i>
+            <% end %>
           </li>
         <% end %>
       </ul>
