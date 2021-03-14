@@ -15,9 +15,9 @@
     <div>
       <h1>
         Responsáveis cadastrados
-        <a href="" class="add-link">
+        <%= link_to new_responsavel_path, :class => "add-link" do %>
           <i class="large material-icons">add_circle</i>
-        </a>
+        <% end %>
       </h1>
 
       <ul class="list">

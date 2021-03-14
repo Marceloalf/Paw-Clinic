@@ -46,7 +46,12 @@
       </div>
 
       <div class="pets">
-        <h3>Pets</h3>
+        <h3>
+          Pets
+          <%= link_to new_animal_path, :class => "add-link" do %>
+            <i class="large material-icons">add_circle</i>
+          <% end %>
+        </h3>
         <% if @responsavel.animals.empty? %>
           <p>Sem pets :(</p>
         <% else %>
