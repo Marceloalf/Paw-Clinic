@@ -1,34 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div id="responsavel" class="retrieve">
+  <div class="banner-content">
+    <%= show_svg("pata.svg") %>
+  </div>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @animal.nome %>
-</p>
+  <main>
+    <header>
+      <div class="profile">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= link_to "Voltar", responsavel_path(@animal.responsavel) %>
+      </div>
+      <img src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
+    </header>
 
-<p>
-  <strong>Especie:</strong>
-  <%= @animal.especie %>
-</p>
+    <div>
+      <h1>
+        Dados do Pet
+      </h1>
 
-<p>
-  <strong>Raca:</strong>
-  <%= @animal.raca %>
-</p>
+      <div class="profile">
+        <p>
+          <strong>
+            Nome:
+          </strong>
+          <%= @animal.nome %>
+        </p>
 
-<p>
-  <strong>Complicacoes:</strong>
-  <%= @animal.complicacoes %>
-</p>
+        <p>
+          <strong>
+            Especie:
+          </strong>
+          <%= @animal.especie %>
+        </p>
+        <p>
+          <strong>
+            Raça:
+          </strong>
+          <%= @animal.raca %>
+        </p>
+        <p>
+          <strong>
+            Complicações:
+          </strong>
+          <%= @animal.complicacoes %>
+        </p>
+        <p>
+          <strong>
+            Data de Nascimento:
+          </strong>
+          <%= @animal.idade %>
+        </p>
 
-<p>
-  <strong>Idade:</strong>
-  <%= @animal.idade %>
-</p>
+        <p>
+          <strong>
+            Sexo:
+          </strong>
+          <%= @animal.sexo %>
+        </p>
+      </div>
 
-<p>
-  <strong>Sexo:</strong>
-  <%= @animal.sexo %>
-</p>
-
-<%= link_to 'Edit', edit_animal_path(@animal) %> |
-<%= link_to 'Back', animals_path %>
+    </div>
+  </main>
+</div>
