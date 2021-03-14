@@ -38,6 +38,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  background-color: #eae4e1;
 
   .add-link {
     margin-left: .5em;
@@ -107,7 +108,6 @@
 
     header {
       position: sticky;
-      background: white;
 
       height: 10vh;
       padding-right: 3em;
