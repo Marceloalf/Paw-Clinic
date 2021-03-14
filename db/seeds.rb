@@ -6,9 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+arr_res = %w[João Marcos Lucas Matheus Gabriel Rodrigo Matias Maria Quelma Leonardo]
+arr_vet = %w[Quemia Bezerra Amanda Santiago Gabriel Roberta Roberto Jennifer Marina Kened]
+arr_pet = %w[Cristal Rex Fluffy Yin Yang Spirit Garfield Pest Gab Stuart]
+
+especies = %w[Gato Cachorro Coelho Papagaio]
+
 10.times do |i|
   Responsavel.create!(
-    nome: "Nome #{i}",
+    nome: arr_res[i],
     cpf: "#{i}",
     telefone: "32222121",
     data_nascimento: Date.today,
@@ -23,7 +29,7 @@ end
 
 10.times do |i|
   Veterinario.create!(
-    nome: "Nome #{i}",
+    nome: arr_vet[i],
     sexo: "Não identificado",
     cpf: "234234#{i}",
     crmv: "123123#{i}",
@@ -40,12 +46,13 @@ end
 
 10.times do |i|
   Animal.create!(
-    nome: "Nome #{i}",
-    especie: "Cachorro",
-    raca: "",
+    nome: arr_pet[i],
+    especie: especies[rand(10)],
+    raca: "Não identificado",
     complicacoes: "Nenhuma",
     idade: Date.today,
-    responsavel: Responsavel.find_by_nome("Nome #{i}")
+    sexo: "Não identificado",
+    responsavel: Responsavel.find_by_nome(arr_res[i])
   )
 end
 
