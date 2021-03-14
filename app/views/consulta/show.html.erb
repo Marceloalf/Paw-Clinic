@@ -1,29 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div id="consulta" class="retrieve">
+  <div class="banner-content">
+    <%= show_svg("estetoscopio.svg") %>
+  </div>
 
-<p>
-  <strong>Data:</strong>
-  <%= @consultum.data %>
-</p>
+  <main>
+    <header>
+      <div class="profile">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= link_to "Voltar", consulta_path %>
+      </div>
+      <img src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
+    </header>
 
-<p>
-  <strong>Sintomas:</strong>
-  <%= @consultum.sintomas %>
-</p>
+    <div>
+      <h1>
+        Dados da consulta
+        <%= link_to edit_consultum_path(@consultum), :class => "add-link" do %>
+          <i class="large material-icons">class</i>
+        <% end %>
+      </h1>
 
-<p>
-  <strong>Prescricao:</strong>
-  <%= @consultum.prescricao %>
-</p>
+      <div class="profile">
+        <p>
+          <strong>
+            Veterinario:
+          </strong>
+          <%= @consultum.veterinario.nome %>
+        </p>
 
-<p>
-  <strong>Created at:</strong>
-  <%= @consultum.created_at %>
-</p>
+        <p>
+          <strong>
+            Pet:
+          </strong>
+          <%= @consultum.animal.nome %>
+        </p>
 
-<p>
-  <strong>Deleted at:</strong>
-  <%= @consultum.deleted_at %>
-</p>
+        <p>
+          <strong>Sintomas:</strong>
+          <%= @consultum.sintomas %>
+        </p>
 
-<%= link_to 'Edit', edit_consultum_path(@consultum) %> |
-<%= link_to 'Back', consulta_path %>
+        <p>
+          <strong>Prescricao:</strong>
+          <%= @consultum.prescricao %>
+        </p>
+
+        <p>
+          <strong>
+            Data:
+          </strong>
+          <%= format_date(@consultum.data) %>
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
