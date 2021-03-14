@@ -60,3 +60,7 @@ gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
 
 gem 'devise'
+
+gem 'prawn'
+
+gem 'prawn-table'
