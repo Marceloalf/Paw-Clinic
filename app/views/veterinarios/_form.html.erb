@@ -1,7 +1,7 @@
-<%= form_with(model: veterinario) do |form| %>
+<%= form_with(model: veterinario, :class => "col-lg-10 p-0") do |form| %>
   <% if veterinario.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(veterinario.errors.count, "error") %> prohibited this veterinario from being saved:</h2>
+      <h2 class="text-danger"><%= pluralize(veterinario.errors.count, "error") %> prohibited this veterinario from being saved:</h2>
 
       <ul>
         <% veterinario.errors.each do |error| %>
@@ -34,6 +34,16 @@
   <div class="form-group">
     <%= form.label :especialidade %>
     <%= form.text_field :especialidade, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :sexo %>
+    <%= form.select(:sexo, ["Masculino", "Feminino", "Não informar"], {}, { :class => "form-control" }) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :data_nascimento %>
+    <%= form.date_field :data_nascimento, class: "form-control" %>
   </div>
 
   <%= form.fields_for :user do |user| %>
