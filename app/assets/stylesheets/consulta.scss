@@ -25,3 +25,30 @@
     }
   }
 }
+
+#consulta.retrieve {
+  .profile {
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  .pets {
+    h3 {
+      font-size: 4rem;
+      margin-top: 1.5em;
+      margin-bottom: .7em;
+      color: $text-red;
+    }
+
+    li {
+      list-style-type: none;
+      font-size: 2rem;
+      margin-top: 20px;
+      border-bottom: 1px solid #cacaca;
+      padding: 10px;
+      width: 68%;
+    }
+  }
+}
+
