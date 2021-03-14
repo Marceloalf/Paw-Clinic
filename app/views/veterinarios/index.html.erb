@@ -1,35 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div id="veterinario">
+  <div class="banner-content">
+    <%= show_svg("medico.svg") %>
+  </div>
 
-<h1>Veterinarios</h1>
+  <main>
+    <header>
+      <div class="profile">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= link_to "Voltar", "/" %>
+      </div>
+      <img src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
+    </header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Cpf</th>
-      <th>Crmv</th>
-      <th>Telefone</th>
-      <th>Especialidade</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div>
+      <h1>
+        Veterinários cadastrados
+        <%= link_to new_veterinario_path, :class => "add-link" do %>
+          <i class="large material-icons">add_circle</i>
+        <% end %>
 
-  <tbody>
-    <% @veterinarios.each do |veterinario| %>
-      <tr>
-        <td><%= veterinario.nome %></td>
-        <td><%= veterinario.cpf %></td>
-        <td><%= veterinario.crmv %></td>
-        <td><%= veterinario.telefone %></td>
-        <td><%= veterinario.especialidade %></td>
-        <td><%= link_to 'Show', veterinario %></td>
-        <td><%= link_to 'Edit', edit_veterinario_path(veterinario) %></td>
-        <td><%= link_to 'Destroy', veterinario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </h1>
 
-<br>
-
-<%= link_to 'New Veterinario', new_veterinario_path %>
+      <ul class="list">
+        <% @veterinarios.each do |veterinario| %>
+          <li class="list-item">
+            <%= link_to veterinario.nome, veterinario, :class => "list-button"%>
+          </li>
+      <% end %>
+      </ul>
+    </div>
+  </main>
+</div>

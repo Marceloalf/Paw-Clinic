@@ -1,3 +1,26 @@
 // Place all the styles related to the Veterinarios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "variaveis";
+
+#veterinario {
+  h1 {
+    color: $text-blue;
+    font-weight: 500;
+    margin-bottom: 1.2em;
+  }
+
+  .banner-content {
+    background-color: #66a6de;
+
+    &::before {
+      background-color: #0476D9;
+    }
+  }
+
+  .list-button {
+    &:hover {
+      background: $bg-blue;
+    }
+  }
+}
