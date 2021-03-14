@@ -12,6 +12,16 @@ class ConsultaController < ApplicationController
 
   # GET /consulta/1 or /consulta/1.json
   def show
+    @consulta = Consultum.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ConsultaPdf.new(@consultum)
+        send_data pdf.render, filename: "Consulta/#{@consultum.__id__}.pdf",
+                  type: "application/pdf",
+                  disposition: "inline"
+      end
+    end
   end
 
   # GET /consulta/new
