@@ -97,6 +97,9 @@
     flex-direction: column;
 
     header {
+      position: sticky;
+      background: white;
+
       height: 10vh;
       padding-right: 3em;
 
