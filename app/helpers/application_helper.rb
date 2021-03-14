@@ -12,4 +12,13 @@ module ApplicationHelper
       ""
     end
   end
+
+  def format_time(date)
+    if date
+      date.strftime("%H:%M")
+    else
+      ""
+    end
+  end
+
 end

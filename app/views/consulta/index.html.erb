@@ -26,7 +26,7 @@
   <tbody>
     <% @consulta.each do |consulta| %>
       <tr>
-        <% render "as_list_without_link", consulta %>
+        <% render "as_list_without_link", consulta: consulta %>
         <td><%= link_to 'Show', consulta %></td>
         <td><%= link_to 'Edit', edit_consultum_path(consulta) %></td>
         <td><%= link_to 'Destroy', consulta, method: :delete, data: { confirm: 'Are you sure?' } %></td>

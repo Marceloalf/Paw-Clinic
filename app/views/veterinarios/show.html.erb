@@ -59,7 +59,10 @@
         <% else %>
           <ul>
             <% @veterinario.consultums.all.each do |consulta| %>
-              <li><%= consulta.animal.nome %></li>
+              <li>
+                Data: <%= format_date(consulta.data.to_date) %>,
+                Horário: <%= format_time(consulta.data) %>
+              </li>
             <% end %>
           </ul>
         <% end %>
