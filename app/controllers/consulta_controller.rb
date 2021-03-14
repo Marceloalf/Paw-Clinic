@@ -7,7 +7,7 @@ class ConsultaController < ApplicationController
 
     @deletados = @consulta.select { |c| not c.deleted_at.nil?}
     @finalizados = @consulta.select { |c| c.finalizada? }
-    @consulta = @consulta.select { |c| c.deleted_at.nil?}
+    @ativas = @consulta.select { |c| c.deleted_at.nil?}
   end
 
   # GET /consulta/1 or /consulta/1.json
