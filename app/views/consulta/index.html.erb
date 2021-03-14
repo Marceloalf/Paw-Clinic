@@ -1,86 +1,53 @@
-<p id="notice"><%= notice %></p>
+<div id="consulta">
+  <div class="banner-content">
+    <%= show_svg("estetoscopio.svg") %>
+  </div>
 
+  <main>
+    <header>
+      <div class="profile">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= link_to "Voltar", "/" %>
+      </div>
+      <img src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
+    </header>
 
-<div class="mt-5">
-  <%= link_to 'Consulta sem cadastro?', new_consultum_path %>
+    <div>
+      <h1>
+        Consulta
+        <%= link_to new_consultum_path, :class => "add-link" do %>
+          <i class="large material-icons">add_circle</i>
+        <% end %>
+      </h1>
+
+      <h2>Ativas</h2>
+      <ul class="list">
+        <% @consulta.each do |consulta| %>
+          <li class="list-item">
+            <%= link_to consulta.data, consulta, :class => "list-button"%>
+          </li>
+        <% end %>
+      </ul>
+
+      <h2>Finalizadas</h2>
+      <ul class="list">
+        <% @finalizados.each do |consulta| %>
+          <li class="list-item">
+            <%= link_to consulta.data, consulta, :class => "list-button"%>
+          </li>
+        <% end %>
+      </ul>
+
+      <h2>Canceladas</h2>
+      <ul class="list">
+        <% @deletados.each do |consulta| %>
+          <li class="list-item">
+            <%= link_to consulta.data, consulta, :class => "list-button"%>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+
+  </main>
 </div>
-
-<div>
-  <%= link_to 'Já possui cadastro?', new_consultum_path %>
-</div>
-
-<h1>Ativas</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Data</th>
-      <th>Sintomas</th>
-      <th>Prescricao</th>
-      <th>Created at</th>
-      <th>Deleted at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @consulta.each do |consulta| %>
-      <tr>
-        <% render "as_list_without_link", consulta: consulta %>
-        <td><%= link_to 'Show', consulta %></td>
-        <td><%= link_to 'Edit', edit_consultum_path(consulta) %></td>
-        <td><%= link_to 'Destroy', consulta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<h1>
-  Finalizada
-</h1>
-
-<table class="table">
-  <thead>
-  <tr>
-    <th>Data</th>
-    <th>Sintomas</th>
-    <th>Prescricao</th>
-    <th>Created at</th>
-    <th>Deleted at</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @finalizados.each do |consulta| %>
-    <tr>
-      <% render "as_list_without_link", consulta %>
-      <td><%= link_to 'Show', consulta %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<h1>Canceladas</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Data</th>
-      <th>Sintomas</th>
-      <th>Prescricao</th>
-      <th>Created at</th>
-      <th>Deleted at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @deletados.each do |consulta| %>
-      <tr>
-        <% render "as_list_without_link", consulta %>
-        <td><%= link_to 'Show', consulta %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
