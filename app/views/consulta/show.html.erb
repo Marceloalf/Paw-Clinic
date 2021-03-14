@@ -23,6 +23,13 @@
       <div class="profile">
         <p>
           <strong>
+            ID consulta:
+          </strong>
+          <%= @consultum.id %>
+        </p>
+
+        <p>
+          <strong>
             Veterinario:
           </strong>
           <%= @consultum.veterinario.nome %>
@@ -58,6 +65,8 @@
           </strong>
           <%= format_time(@consultum.data) %>
         </p>
+        <%= link_to "Imprimir", consultum_path(@consultum, format: "pdf") %>
+
       </div>
     </div>
   </main>

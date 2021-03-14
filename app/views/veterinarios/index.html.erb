@@ -24,7 +24,7 @@
       <ul class="list">
         <% @veterinarios.each do |veterinario| %>
           <li class="list-item">
-            <%= link_to veterinario.nome, veterinario, :class => "list-button"%>
+            <%= link_to "Dr. " + veterinario.nome, veterinario, :class => "list-button"%>
           </li>
       <% end %>
       </ul>
