@@ -31,7 +31,7 @@ class VeterinariosController < ApplicationController
     @veterinario = Veterinario.new(attributes)
 
     respond_to do |format|
-      if @veterinario.save
+      if @veterinario.save and @veterinario.user.save
         format.html { redirect_to @veterinario, notice: "Veterinario was successfully created." }
         format.json { render :show, status: :created, location: @veterinario }
       else
@@ -71,6 +71,6 @@ class VeterinariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def veterinario_params
-      params.require(:veterinario).permit(:nome, :cpf, :crmv, :telefone, :especialidade, user:[:email, :password])
+      params.require(:veterinario).permit(:nome, :cpf, :sexo, :data_nascimento, :crmv, :telefone, :especialidade, user:[:email, :password])
     end
 end

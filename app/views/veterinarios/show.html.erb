@@ -1,30 +1,69 @@
-<p id="notice"><%= notice %></p>
+<div id="veterinario" class="retrieve">
+  <div class="banner-content">
+    <%= show_svg("medico.svg") %>
+  </div>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @veterinario.nome %>
-</p>
+  <main>
+    <header>
+      <div class="profile">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= link_to "Voltar", veterinarios_path %>
+      </div>
+      <img src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
+    </header>
 
-<p>
-  <strong>Cpf:</strong>
-  <%= @veterinario.cpf %>
-</p>
+    <div>
+      <h1>
+        Dados do veterinário
+      </h1>
 
-<p>
-  <strong>Crmv:</strong>
-  <%= @veterinario.crmv %>
-</p>
+      <div class="profile">
+        <p>
+          <strong>
+            Nome:
+          </strong>
+          <%= @veterinario.nome %>
+        </p>
 
-<p>
-  <strong>Telefone:</strong>
-  <%= @veterinario.telefone %>
-</p>
+        <p>
+          <strong>
+            CPF:
+          </strong>
+          <%= @veterinario.cpf %>
+        </p>
+        <p>
+          <strong>
+            Data de nascimento:
+          </strong>
+          <%= format_date(@veterinario.data_nascimento) %>
+        </p>
+        <p>
+          <strong>
+            Crmv:
+          </strong>
+          <%= @veterinario.crmv %>
+        </p>
+        <p>
+          <strong>
+            Telefone:
+          </strong>
+          <%= @veterinario.telefone %>
+        </p>
+      </div>
 
-<p>
-  <strong>Especialidade:</strong>
-  <%= @veterinario.especialidade %>
-</p>
+      <div class="pets">
+        <h3>Consultas</h3>
 
-<%= link_to 'Edit', edit_veterinario_path(@veterinario) %> |
-<%= link_to 'Back', veterinarios_path %>
-
+        <% if @veterinario.consultums.empty? %>
+          <p>Sem consultas 😕</p>
+        <% else %>
+          <ul>
+            <% @veterinario.consultums.all.each do |consulta| %>
+              <li><%= consulta.animal.nome %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>

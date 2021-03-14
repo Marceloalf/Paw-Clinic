@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+  <% if not veterinario.user.nil? and veterinario.user.errors.any? %>
+    <div id="error_explanation">
+      <h2 class="text-danger"><%= pluralize(veterinario.errors.count, "error") %> prohibited this veterinario from being saved:</h2>
+
+      <ul>
+        <% veterinario.user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <%= form.label :nome %>
     <%= form.text_field :nome, class: "form-control" %>
