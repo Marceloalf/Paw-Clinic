@@ -1,8 +1,21 @@
-<div class="pl-3 pr-3">
-  <h1>Nova consulta</h1>
 
-  <%= render 'form', consultum: @consultum %>
+<div id="consulta">
+  <div class="banner-content">
+    <%= show_svg("estetoscopio.svg") %>
+  </div>
 
-  <%= link_to 'Back', consulta_path %>
+  <main>
+    <header>
+      <div class="profile">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= link_to 'Voltar', consulta_path %>
+      </div>
+      <img src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
+    </header>
 
+    <div>
+      <h1>Cadastro consulta</h1>
+      <%= render 'form', consultum: @consultum %>
+    </div>
+  </main>
 </div>

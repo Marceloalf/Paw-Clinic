@@ -1,4 +1,4 @@
-<%= form_with(model: consultum) do |form| %>
+<%= form_with(model: consultum, :class => "col-lg-9 p-0") do |form| %>
   <% if consultum.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(consultum.errors.count, "error") %> prohibited this consultum from being saved:</h2>
