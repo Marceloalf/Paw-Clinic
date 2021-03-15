@@ -58,7 +58,7 @@
           <p>Sem consultas 😕</p>
         <% else %>
           <ul>
-            <% @veterinario.consultums.all.each do |consulta| %>
+            <% @veterinario.consultums.order(:data, :desc).each do |consulta| %>
               <li>
                 Data: <%= format_date(consulta.data.to_date) %>,
                 Horário: <%= format_time(consulta.data) %>

@@ -3,7 +3,7 @@ class ConsultaController < ApplicationController
 
   # GET /consulta or /consulta.json
   def index
-    @consulta = Consultum.order deleted_at: :desc
+    @consulta = Consultum.order(:data, :desc)
 
     @deletados = @consulta.select { |c| not c.deleted_at.nil?}
     @finalizados = @consulta.select { |c| c.data < DateTime.now }
