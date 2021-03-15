@@ -10,7 +10,7 @@ class ConsultaController < ApplicationController
     @ativas = @consulta.select { |c| c.deleted_at.nil?}
   end
 
-  # GET /consulta/1 or /consulta/1.json
+  # GET /consulta/1 or /consulta/1.json or /consulta/1.pdf
   def show
     @consulta = Consultum.find(params[:id])
     respond_to do |format|
