@@ -1,5 +1,6 @@
 class ConsultaController < ApplicationController
   before_action :set_consultum, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /consulta or /consulta.json
   def index
@@ -12,7 +13,6 @@ class ConsultaController < ApplicationController
 
   # GET /consulta/1 or /consulta/1.json or /consulta/1.pdf
   def show
-    @consulta = Consultum.find(params[:id])
     respond_to do |format|
       format.html
       format.pdf do

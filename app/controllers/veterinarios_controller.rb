@@ -1,5 +1,6 @@
 class VeterinariosController < ApplicationController
   before_action :set_veterinario, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /veterinarios or /veterinarios.json
   def index

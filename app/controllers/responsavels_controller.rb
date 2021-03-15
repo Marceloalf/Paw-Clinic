@@ -1,5 +1,6 @@
 class ResponsavelsController < ApplicationController
   before_action :set_responsavel, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /responsavels or /responsavels.json
   def index

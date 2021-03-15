@@ -1,14 +1,6 @@
 class AnimalsController < ApplicationController
   before_action :set_animal, only: %i[ show edit update destroy ]
-
-  # GET /animals or /animals.json
-  def index
-    @animals = Animal.all
-  end
-
-  # GET /animals/1 or /animals/1.json
-  def show
-  end
+  before_action :authenticate_user!
 
   # GET /animals/new
   def new
