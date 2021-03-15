@@ -26,10 +26,24 @@
 
       &:hover {
         color: white;
+
+        .item-actions {
+          a {
+            i {
+              color: white !important;
+            }
+          }
+        }
       }
 
       text-decoration: none;
-      color: $text-black
+      color: $text-black;
+
+      .list-button-main-link {
+
+        text-decoration: none;
+        color: $text-black;
+      }
     }
   }
 }
@@ -49,13 +63,17 @@
     }
   }
 
-  .icons-link{
-    margin-left: .5em;
-    vertical-align: middle;
+  .item-actions {
+    float: right;
 
-    i {
-      color: #4c4c4c;
-      font-size: 2rem;
+    a {
+      margin-left: .5em;
+      vertical-align: middle;
+
+      i {
+        color: #4c4c4c;
+        font-size: 2rem;
+      }
     }
   }
 

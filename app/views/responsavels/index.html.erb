@@ -23,14 +23,6 @@
       <ul class="list">
         <% @responsavels.each do |responsavel| %>
           <%= render "responsavel_button", responsavel: responsavel %>
-
-          <%= link_to edit_responsavel_path(responsavel), :class => "icons-link" do %>
-            <i class="large material-icons">edit</i>
-          <% end %>
-
-          <%= link_to responsavel, method: :delete, remote: true, class: "icons-link" do %>
-            <i class="large material-icons">delete</i>
-          <% end %>
         <% end %>
       </ul>
 

@@ -24,15 +24,23 @@
       <ul class="list">
         <% @veterinarios.each do |veterinario| %>
           <li class="list-item">
-            <%= link_to "Dr. " + veterinario.nome, veterinario, :class => "list-button"%>
+            <div class="list-button">
+              <%= "Dr. " + veterinario.nome %>
 
-            <%= link_to edit_veterinario_path(veterinario), :class => "icons-link" do %>
-              <i class="large material-icons">edit</i>
-            <% end %>
+              <div class="item-actions">
+                <%= link_to veterinario do %>
+                  <i class="large material-icons">remove_red_eye</i>
+                <% end %>
 
-            <%= link_to veterinario, method: :delete, remote: true, class: "icons-link" do %>
-              <i class="large material-icons">delete</i>
-            <% end %>
+                <%= link_to edit_veterinario_path(veterinario) do %>
+                  <i class="material-icons">edit</i>
+                <% end %>
+
+                <%= link_to veterinario, method: :delete, remote: true do %>
+                  <i class="material-icons">delete</i>
+                <% end %>
+              </div>
+            </div>
           </li>
       <% end %>
       </ul>

@@ -1,3 +1,20 @@
 <li class="list-item">
-  <%= link_to responsavel.nome, responsavel, :class => "list-button"%>
+  <div class="list-button">
+    <%= responsavel.nome %>
+
+    <div class="item-actions">
+      <%= link_to responsavel do %>
+        <i class="large material-icons">remove_red_eye</i>
+      <% end %>
+
+      <%= link_to edit_responsavel_path(responsavel) do %>
+        <i class="large material-icons">edit</i>
+      <% end %>
+
+      <%= link_to responsavel, method: :delete, remote: true do %>
+        <i class="large material-icons">delete</i>
+      <% end %>
+    </div>
+  </div>
+
 </li>

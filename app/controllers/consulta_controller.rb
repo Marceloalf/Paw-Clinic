@@ -6,8 +6,8 @@ class ConsultaController < ApplicationController
     @consulta = Consultum.order deleted_at: :desc
 
     @deletados = @consulta.select { |c| not c.deleted_at.nil?}
-    @finalizados = @consulta.select { |c| c.finalizada? }
-    @ativas = @consulta.select { |c| c.deleted_at.nil?}
+    @finalizados = @consulta.select { |c| c.data < DateTime.now }
+    @ativas = @consulta.select { |c| c.data >= DateTime.now and c.deleted_at.nil? }
   end
 
   # GET /consulta/1 or /consulta/1.json or /consulta/1.pdf

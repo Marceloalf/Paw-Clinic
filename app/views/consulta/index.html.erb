@@ -24,16 +24,23 @@
       <ul class="list">
         <% @ativas.each do |consulta| %>
           <li class="list-item">
-            <%= link_to consulta.data, consulta, :class => "list-button"%>
+            <div class="list-button">
+              <%= format_date(consulta.data) + " às " + format_time(consulta.data) %>
 
-            <%= link_to edit_consultum_path(consulta), :class => "icons-link" do %>
-              <i class="large material-icons">edit</i>
-            <% end %>
+              <div class="item-actions">
+                <%= link_to consulta do %>
+                  <i class="large material-icons">remove_red_eye</i>
+                <% end %>
 
-            <%= link_to consulta, method: :delete, remote: true, class: "icons-link" do %>
-              <i class="large material-icons">cancel</i>
-            <% end %>
+                <%= link_to edit_consultum_path(consulta), :class => "icons-link" do %>
+                  <i class="large material-icons">edit</i>
+                <% end %>
 
+                <%= link_to consulta, method: :delete, remote: true, class: "icons-link" do %>
+                  <i class="large material-icons">cancel</i>
+                <% end %>
+              </div>
+            </div>
           </li>
         <% end %>
       </ul>
@@ -42,7 +49,15 @@
       <ul class="list">
         <% @finalizados.each do |consulta| %>
           <li class="list-item">
-            <%= link_to consulta.data, consulta, :class => "list-button"%>
+            <div class="list-button">
+              <%= format_date(consulta.data) + " às " + format_time(consulta.data) %>
+
+              <div class="item-actions">
+                <%= link_to consulta do %>
+                  <i class="large material-icons">remove_red_eye</i>
+                <% end %>
+              </div>
+            </div>
           </li>
         <% end %>
       </ul>
@@ -51,10 +66,15 @@
       <ul class="list">
         <% @deletados.each do |consulta| %>
           <li class="list-item">
-            <%= link_to consulta.data, consulta, :class => "list-button"%>
-            <%= link_to edit_consultum_path(consulta), :class => "icons-link" do %>
-              <i class="large material-icons">edit</i>
-            <% end %>
+            <div class="list-button">
+              <%= format_date(consulta.data) + " às " + format_time(consulta.data) %>
+
+              <div class="item-actions">
+                <%= link_to consulta do %>
+                  <i class="large material-icons">remove_red_eye</i>
+                <% end %>
+              </div>
+            </div>
           </li>
         <% end %>
       </ul>
