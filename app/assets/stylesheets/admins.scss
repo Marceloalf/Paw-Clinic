@@ -48,3 +48,20 @@
     }
   }
 }
+
+// pagination
+
+#admin > main > div > nav > ul {
+  > li.page-item {
+    &.active {
+      a {
+        background-color: #303030;
+        border-color: #303030;
+        color: white;
+      }
+    }
+    a {
+      color: #2E2F30;
+    }
+  }
+}
