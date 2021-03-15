@@ -31,3 +31,6 @@ abrir o `rails console` e digitar o seguinte comando alterando os dados necessá
 ```ruby
 User.create!({:email => "emsssesdsail@admins.com", :password => "123456", :tipo_usuario => :admin })
 ```
+
+
+![image](docs/home.png) 
