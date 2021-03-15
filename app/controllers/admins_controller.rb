@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
 
   # GET /animals or /animals.json
   def index
-    @admins = User.all.order :email
+    @admins = User.order(:email).page params[:page]
   end
 
   def new
