@@ -29,5 +29,5 @@ abrir o `rails console` e digitar o seguinte comando alterando os dados necessá
 **Obs**:  não alterar o valor `tipo_usuario`
 
 ```ruby
-User.create!({:email => "emsssesdsail@admin.com", :password => "123456", :tipo_usuario => :admin })
+User.create!({:email => "emsssesdsail@admins.com", :password => "123456", :tipo_usuario => :admin })
 ```

@@ -64,3 +64,5 @@ gem 'devise'
 gem 'prawn'
 
 gem 'prawn-table'
+
+gem 'kaminari'

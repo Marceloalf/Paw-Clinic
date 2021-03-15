@@ -1,8 +1,6 @@
 @import "variaveis";
 
 #home {
-  background-color: #ecab92;
-
   // cores
   .consulta {
     background: $bg-red;
@@ -17,10 +15,10 @@
   }
 
   .content {
-    background: #eae4e1;
+    background: rgb(21, 207, 190);
 
     &::before {
-      background: #eae4e1;
+      background: rgba(110, 224, 213, 0.5);
     }
   }
 

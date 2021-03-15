@@ -6,6 +6,10 @@
   =require twitter-bootstrap-static/fontawesome
 /* boostratp classes */
 
+body {
+    background-color: #fcf8f8;
+}
+
 .btn-primary {
     background: #0476D9;
     color: whitesmoke;

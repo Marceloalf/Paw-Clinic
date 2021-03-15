@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :consulta
   resources :animals
   resources :veterinarios
+  resources :admins
 end

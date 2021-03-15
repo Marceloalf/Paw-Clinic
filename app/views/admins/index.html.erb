@@ -1,0 +1,48 @@
+<div id="admin">
+  <div class="banner-content">
+    <%= show_svg("admin.svg") %>
+  </div>
+
+  <main>
+    <header>
+      <div class="profile">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= link_to "Voltar", "/" %>
+      </div>
+      <img src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
+    </header>
+
+    <div>
+      <h1>
+        Administradores
+        <%= link_to new_admin_path, :class => "add-link" do %>
+          <i class="large material-icons">add_circle</i>
+        <% end %>
+      </h1>
+
+      <ul class="list">
+        <% @admins.each do |admin| %>
+          <li class="list-item">
+            <div class="list-button">
+              <%= admin.email %>
+
+              <div class="item-actions">
+                <%= link_to admin_path(admin),
+                            method: :delete,
+                            remote: true,
+                            :data => {
+                              :confirm => "Tem certeza que deseja deletar o admin: #{admin.email}"
+                            } do %>
+                  <i class="large material-icons">delete</i>
+                <% end %>
+              </div>
+            </div>
+
+          </li>
+      <% end %>
+      </ul>
+
+    </div>
+
+  </main>
+</div>

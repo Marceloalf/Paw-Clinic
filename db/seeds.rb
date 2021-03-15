@@ -57,7 +57,7 @@ end
 end
 
 User.create!(
-  email: "admin@admin.com",
+  email: "admins@admins.com",
   password: "123456",
-  tipo_usuario: "admin"
+  tipo_usuario: "admins"
 )

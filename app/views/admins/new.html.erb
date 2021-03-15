@@ -1,0 +1,56 @@
+<div id="admin">
+  <div class="banner-content">
+    <%= show_svg("admin.svg") %>
+  </div>
+
+  <main>
+    <header>
+      <div class="profile">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= link_to "Voltar", "/" %>
+      </div>
+      <img src="https://th.bing.com/th/id/R11cffbc044ed6560dc1b441d3ac9aeed?rik=VPbSjpc4MP4OrQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_169259.png&ehk=nVhocnKFtnrJBqcKSAfc9%2bpLn%2fJh6mkTyFnQV7A110U%3d&risl=&pid=ImgRaw" alt="profile img">
+    </header>
+
+    <div>
+      <h1>Cadastro administrador</h1>
+
+
+      <%= form_with(url: admins_path, :scope => :admin, :class => "col-lg-9 p-0") do |form| %>
+        <% if @admin.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this administrador from being saved:</h2>
+
+            <ul>
+              <% @admin.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= form.label :email %>
+          <%= form.email_field :email, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :password %>
+          <%= form.password_field :password, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :confirmation_password %>
+          <%= form.password_field :confirmation_password, class: "form-control" %>
+        </div>
+
+        <button class="btn btn-danger" type="submit">
+          Salvar
+        </button>
+      <% end %>
+
+
+    </div>
+
+  </main>
+</div>

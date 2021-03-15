@@ -1,0 +1,32 @@
+<%= form_with(model: admin, :class => "col-lg-9 p-0") do |form| %>
+  <% if admin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin.errors.count, "error") %> prohibited this administrador from being saved:</h2>
+
+      <ul>
+        <% admin.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.date_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :password %>
+    <%= form.time_field :password, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :confirmation_password %>
+    <%= form.text_field :confirmation_password, class: "form-control" %>
+  </div>
+
+  <button class="btn btn-danger" type="submit">
+    Salvar
+  </button>
+<% end %>
