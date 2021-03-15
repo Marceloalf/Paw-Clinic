@@ -17,13 +17,8 @@ especies = %w[Gato Cachorro Coelho Papagaio]
     nome: arr_res[i],
     cpf: "#{i}",
     telefone: "32222121",
-    data_nascimento: Date.today,
-    sexo: "Não identificado",
-    user: User.new(
-      email: "res-#{i}@email.com",
-      password: "123456",
-      tipo_usuario: "responsavel"
-    )
+    data_nascimento: 18.years.ago.to_date,
+    sexo: "Não identificado"
   )
 end
 
@@ -35,19 +30,14 @@ end
     crmv: "123123#{i}",
     telefone: "123123",
     especialidade: "Estomago",
-    data_nascimento: Date.today,
-    user: User.new(
-      email: "vet-#{i}@email.com",
-      password: "123456",
-      tipo_usuario: "veterinario"
-    )
+    data_nascimento: 18.years.ago.to_date
   )
 end
 
 10.times do |i|
   Animal.create!(
     nome: arr_pet[i],
-    especie: especies[rand(10)],
+    especie: especies[i % 4],
     raca: "Não identificado",
     complicacoes: "Nenhuma",
     data_nascimento: Date.today,
@@ -57,7 +47,7 @@ end
 end
 
 User.create!(
-  email: "admins@admins.com",
+  email: "admin@admin.com",
   password: "123456",
-  tipo_usuario: "admins"
+  tipo_usuario: "admin"
 )
