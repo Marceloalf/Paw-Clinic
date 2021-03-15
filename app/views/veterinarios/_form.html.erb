@@ -11,18 +11,6 @@
     </div>
   <% end %>
 
-  <% if not veterinario.user.nil? and veterinario.user.errors.any? %>
-    <div id="error_explanation">
-      <h2 class="text-danger"><%= pluralize(veterinario.errors.count, "error") %> prohibited this veterinario from being saved:</h2>
-
-      <ul>
-        <% veterinario.user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="form-group">
     <%= form.label :nome %>
     <%= form.text_field :nome, class: "form-control" %>
@@ -58,24 +46,7 @@
     <%= form.date_field :data_nascimento, class: "form-control" %>
   </div>
 
-  <%= form.fields_for :user do |user| %>
-    <div class="form-group">
-      <%= user.label :email %>
-      <%= user.email_field :email, autocomplete: "email", class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= user.label :password %>
-      <%= user.password_field :password, autocomplete: "new-password", class: "form-control"%>
-
-      <small class="form-text text-muted">
-        (Pelo menos <%= User.password_length.min %> caracteres)
-      </small>
-
-    </div>
-  <% end %>
-
   <div class="actions">
-    <%= form.submit "Criar veterinário", class: "btn btn-primary" %>
+    <%= form.submit "Salvar", class: "btn btn-primary" %>
   </div>
 <% end %>

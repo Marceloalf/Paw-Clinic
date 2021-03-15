@@ -50,7 +50,7 @@ end
     especie: especies[rand(10)],
     raca: "Não identificado",
     complicacoes: "Nenhuma",
-    idade: Date.today,
+    data_nascimento: Date.today,
     sexo: "Não identificado",
     responsavel: Responsavel.find_by_nome(arr_res[i])
   )

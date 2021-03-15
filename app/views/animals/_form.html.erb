@@ -16,7 +16,7 @@
       <%= form.hidden_field 'responsavel_id' %>
     <% else %>
       <%= form.label :responsavel_id %> <br/>
-      <%= form.collection_select(:responsavel_id, Responsavel.order('nome'), :id, :nome, {:prompt => true}) %>
+      <%= form.collection_select(:responsavel_id, Responsavel.order('nome'), :id, :nome, {:prompt => true}, :class => "form-control")%>
     <% end %>
   </div>
 
@@ -42,7 +42,7 @@
 
   <div class="form-group">
     <%= form.label "Data de nascimento" %>
-    <%= form.date_field :idade, class: "form-control" %>
+    <%= form.date_field :data_nascimento, class: "form-control" %>
   </div>
 
   <div class="form-group">
