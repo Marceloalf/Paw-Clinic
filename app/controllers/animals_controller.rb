@@ -14,6 +14,11 @@ class AnimalsController < ApplicationController
   def new
     prepare_form
     @animal = Animal.new
+
+    if params[:responsavel]
+      @animal.responsavel = Responsavel.find(params[:responsavel])
+    end
+
   end
 
   # GET /animals/1/edit
@@ -23,10 +28,6 @@ class AnimalsController < ApplicationController
 
   # POST /animals or /animals.json
   def create
-    if params[:responsavel]
-      @animal.responsavel = Responsavel.find(animal_params)
-    end
-
     @animal = Animal.new(animal_params)
 
     respond_to do |format|
