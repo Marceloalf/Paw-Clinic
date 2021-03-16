@@ -33,4 +33,23 @@ User.create!({:email => "emsssesdsail@admins.com", :password => "123456", :tipo_
 ```
 
 
+# Imagens do sistema
+
+### Home
+
 ![image](docs/home.png) 
+
+
+### Eesponsáveis e veterinários
+![image](docs/resp_list.png) 
+![image](docs/resp_det.png)
+![image](docs/resp_add.png)
+![image](docs/pet_add.png)
+
+### Consulta
+![image](docs/con_list.png)
+![image](docs/con_add.png)
+
+### Veterinario
+![image](docs/vet_list.png)
+![image](docs/vet_add.png)
